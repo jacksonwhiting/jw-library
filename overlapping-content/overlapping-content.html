@@ -1,0 +1,26 @@
+<!-- This shows how to use grid to setup overlapping content and elminate
+the problems that come with position relative and absolute.  
+The trick is to setup the grid such that it accomodates both elements
+without putting specific sizes on them or the grid.  Instead set max width
+or max height on the elements.  See the CSS file for how to set up the grid. -->
+<section
+	class="bg-skin-canvas-pri pt-36 px-6 grid overlapping-grid-rows md:max-w-3xl mx-auto">
+	<div
+		class="px-4 max-w-[350px] mx-auto md:mx-0 col-start-1 col-end-1 row-start-1 row-end-5">
+		<img
+			src="./assets/images/image-founder.webp"
+			alt="photo of company founder" />
+	</div>
+	<div
+		class="bg-skin-fill-pri text-skin-content-inverted col-start-1 col-end-1 row-start-4 md:row-start-3 row-end-6 max-w-[375px] md:max-w-lg mx-auto md:mr-0 md:ml-auto py-12 px-12 text-center md:text-left">
+		<h2 class="text-hdgS mb-4">Be the first to test</h2>
+		<p class="font-manrope text-base leading-7 font-thin mb-8">
+			Hi, I'm Louis Graham, the founder of the company. Book a demo call with
+			me to become a beta tester for our app and kickstart your company.
+			Apply for access below and I’ll be in touch to schedule a call.
+		</p>
+		<a class="p-4 bg-skin-fill-accent text-skin-accent-pri" href="#">
+			<span>Apply for access</span>
+		</a>
+	</div>
+</section>

@@ -1,0 +1,9 @@
+/* Two or more background images.  Change the position of each in sequential
+order with a comma in between as noted in the background-position property */
+@media (min-width: 640px) {
+	.hero-background__imgs {
+		background-image: url("/assets/images/bg-pattern-1.svg"),
+			url("/assets/images/bg-pattern-2.svg");
+		background-position: left -13rem top -2rem, right -6rem top 9rem;
+	}
+}
