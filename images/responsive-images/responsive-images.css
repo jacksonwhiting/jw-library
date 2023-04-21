@@ -1,0 +1,34 @@
+.home__hero-image {
+	display: flex;
+	justify-content: center;
+}
+
+.home__hero-image-container {
+	grid-column: 1 / 3;
+	grid-row: 1 / 3;
+	justify-self: end;
+	align-self: end;
+	margin-top: 0;
+}
+
+.home__hero-image {
+	display: block;
+}
+
+@media (min-width: 640px) {
+	.home__hero-image img {
+		max-width: min-content;
+		height: 600px;
+		z-index: -1;
+		object-fit: none;
+		object-position: -160% 60%;
+	}
+}
+
+@meda (min-width: 1024px) {
+	.home__hero-image img {
+		width: 700px;
+		height: 800px;
+		object-position: -30% 130%;
+	}
+}
