@@ -7,3 +7,20 @@ order with a comma in between as noted in the background-position property */
 		background-position: left -13rem top -2rem, right -6rem top 9rem;
 	}
 }
+
+/* Blend a background image with a background color using unique blends (blend mode) */
+.footer__mobile-background-img2 {
+	background-image: url("/assets/mobile/image-footer.jpg");
+	background-position: top;
+	background-color: rgb(77, 150, 169);
+	background-blend-mode: darken;
+}
+
+/* Layer background color on top of a background image with opacity less than 100 (so you can see through the background color) */
+.footer__mobile-background-img3 {
+	background-image: linear-gradient(to right,
+			rgb(77, 150, 169, 0.8),
+			rgb(77, 150, 169, 0.8)),
+		url("/assets/mobile/image-footer.jpg");
+	background-position: top;
+}
