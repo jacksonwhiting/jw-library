@@ -18,9 +18,35 @@ order with a comma in between as noted in the background-position property */
 
 /* Layer background color on top of a background image with opacity less than 100 (so you can see through the background color) */
 .footer__mobile-background-img3 {
-	background-image: linear-gradient(to right,
+	background-image: linear-gradient(
+			to right,
 			rgb(77, 150, 169, 0.8),
-			rgb(77, 150, 169, 0.8)),
+			rgb(77, 150, 169, 0.8)
+		),
 		url("/assets/mobile/image-footer.jpg");
 	background-position: top;
+}
+
+/* Another way to layer a background color on top of a background image using the before psuedo selector */
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-top: 126px;
+	height: 428px;
+	text-align: center;
+	background: url("../assets/mobile/image-footer.jpg") bottom center/cover
+		no-repeat;
+	z-index: 0;
+}
+.footer::before {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	content: "";
+	background-color: rgb(77, 150, 168);
+	opacity: 0.9;
+	z-index: 1;
 }
