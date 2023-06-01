@@ -21,7 +21,7 @@ module.exports = {
 				},
 			},
 			fontFamily: {
-				fontFamily: ["Red Hat Display", sans - serif],
+				fontFamily: ["Red Hat Display", "sans-serif"],
 			},
 			fontSize: {
 				hdgL: ["64px", "64px"],
