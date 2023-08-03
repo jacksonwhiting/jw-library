@@ -1,0 +1,28 @@
+.input-width {
+	width: calc(100% - 4px);
+}
+
+input:focus + div {
+	background-image: linear-gradient(
+		180deg,
+		rgba(99, 72, 254, 1) 0%,
+		rgba(97, 5, 149, 1) 100%
+	);
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.blur-err-msg:invalid ~ p {
+	display: block;
+}
+
+.show-err-msg {
+	display: block;
+}

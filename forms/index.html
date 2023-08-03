@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		<title></title>
+
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+		<script src="tailwind.config.js"></script>
+	</head>
+
+	<body class="font-fontPri text-pri-light">
+		<main>
+			<section
+				class="max-h-[32vh] lg:min-h-[100vh] lg:flex lg:justify-center lg:items-center">
+				<!-- This is a credit card form. It adds masking to the credit card
+				number field and numerous other parameters to other fields. The
+				credit card field has javascript added to prevent the user from
+				typing anything other than numbers. You can do this using the
+				input[type=number] but it was too restrictive in other ways. For
+				example, the number field will not restrict the amount of numbers
+				you could but the text field does. -->
+				<form
+					id="credit-card-form"
+					class="mt-32 lg:mt-0 mb-16 lg:mb-0 px-6 max-w-[27rem] mx-auto lg:mx-0"
+					action="">
+					<div>
+						<label
+							class="ml-[2px] uppercase text-bodyM text-primary"
+							for="cardholder-name"
+							>CARDHOLDER NAME</label
+						>
+						<div class="mt-3">
+							<div class="relative">
+								<input
+									class="peer input-width mt-[2px] ml-[2px] border-[1.5px] border-pri-light py-4 px-6 rounded-lg text-hdgL text-primary placeholder:text-hdgL placeholder:text-pri-light placeholder:font-medium focus:ring-transparent focus:border-transparent"
+									type="text"
+									id="cardholder-name"
+									name="cardholderName"
+									pattern="[a-z]*"
+									placeholder="e.g. Jane Appleseed"
+									required />
+								<div
+									class="absolute -z-10 inset-0 w-full h-[62px] rounded-lg"></div>
+								<!-- Javascript targets blur event and adds error message (p tag below) when invalid 
+									Can't target blur event with CSS (unfortunately)-->
+								<p
+									class="hidden peer-invalid:peer-focus:block mt-2 text-error text-bodyS">
+									Please input your name
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="mt-4">
+						<label
+							class="ml-[2px] uppercase text-bodyM text-primary"
+							for="card-number"
+							>CARD NUMBER</label
+						>
+						<div class="mt-3">
+							<div class="relative">
+								<input
+									class="peer input-width mt-[2px] ml-[2px] border-[1.5px] border-pri-light py-4 px-6 rounded-lg text-hdgL text-primary placeholder:text-hdgL placeholder:text-pri-light placeholder:font-medium focus:ring-transparent focus:border-transparent"
+									type="text"
+									id="card-number"
+									name="cardNumber"
+									placeholder="e.g. 1234 5678 9123 0000"
+									maxlength="19"
+									minlength="16"
+									pattern="[\d*]{4}\s[\d*]{4}\s[\d*]{4}\s[\d]{4}"
+									inputmode="numeric"
+									required />
+								<div
+									class="absolute -z-10 inset-0 w-full h-[62px] rounded-lg"></div>
+								<p
+									class="hidden peer-invalid:peer-focus:block mt-2 text-error text-bodyS">
+									Wrong format, must be a 16 digit number
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-4 gap-x-3 items-start mt-4">
+						<div>
+							<label
+								class="ml-[2px] uppercase text-bodyM text-primary whitespace-nowrap"
+								for="card-month"
+								>EXP. DATE (MM/YY)</label
+							>
+							<div class="mt-3">
+								<div class="relative">
+									<input
+										class="peer input-width mt-[2px] ml-[2px] border-[1.5px] border-pri-light py-4 px-6 rounded-lg text-hdgL text-primary placeholder:text-hdgL placeholder:text-pri-light placeholder:font-medium focus:ring-transparent focus:border-transparent"
+										type="text"
+										inputmode="numeric"
+										id="card-month"
+										name="cardMonth"
+										placeholder="MM"
+										maxlength="2"
+										pattern="[0-9]*"
+										required />
+									<div
+										class="absolute -z-10 inset-0 w-full h-[62px] rounded-lg"></div>
+									<p
+										id="month-err-msg"
+										class="hidden ml-2 peer-invalid:peer-focus:block mt-2 text-error text-bodyS col-start-1 col-end-3 whitespace-nowrap">
+										Can't be blank, must be a number
+									</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<!-- Added mt-9 to this input to account for the lack of label -->
+							<div class="mt-9">
+								<div class="relative">
+									<input
+										onblur="renderMonthErrMsg()"
+										onfocus="renderMonthErrMsg()"
+										oninput="renderMonthErrMsg()"
+										class="peer input-width mt-[2px] ml-[2px] border-[1.5px] border-pri-light py-4 px-6 rounded-lg text-hdgL text-primary placeholder:text-hdgL placeholder:text-pri-light placeholder:font-medium focus:ring-transparent focus:border-transparent"
+										type="text"
+										inputmode="numeric"
+										id="card-year"
+										name="cardYear"
+										placeholder="YY"
+										maxlength="2"
+										pattern="[0-9]*"
+										max="2"
+										required />
+									<div
+										class="absolute -z-10 inset-0 w-full h-[62px] rounded-lg"></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-span-2">
+							<label
+								class="ml-[2px] uppercase text-bodyM text-primary"
+								for="card-cvc"
+								>CVC</label
+							>
+							<div class="mt-3">
+								<div class="relative">
+									<input
+										class="peer input-width mt-[2px] ml-[2px] border-[1.5px] border-pri-light py-4 px-6 rounded-lg text-hdgL text-primary placeholder:text-hdgL placeholder:text-pri-light placeholder:font-medium focus:ring-transparent focus:border-transparent"
+										type="text"
+										id="card-cvc"
+										name="cardCvc"
+										maxlength="3"
+										pattern="[0-9]*"
+										placeholder="e.g. 123"
+										inputmode="numeric"
+										required />
+									<div
+										class="absolute -z-10 inset-0 w-full h-[62px] rounded-lg"></div>
+									<p
+										class="hidden ml-2 peer-invalid:peer-focus:block mt-2 text-error text-bodyS">
+										Can't be blank, must be a number
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<button
+						id="card-form-btn"
+						class="py-4 mt-9 bg-primary rounded-md text-center w-full text-hdgL font-semibold">
+						Confirm
+					</button>
+				</form>
+			</section>
+		</main>
+		<script src="main.js" async></script>
+		<!-- May use defer instead of async in script tag -->
+	</body>
+</html>

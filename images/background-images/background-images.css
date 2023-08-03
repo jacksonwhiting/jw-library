@@ -1,3 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+}
+
 /* Two or more background images.  Change the position of each in sequential
 order with a comma in between as noted in the background-position property */
 @media (min-width: 640px) {
