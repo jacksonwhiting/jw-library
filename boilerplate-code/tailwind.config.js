@@ -3,34 +3,41 @@ module.exports = {
 	content: ["./src/**/*.{html,js}"],
 	theme: {
 		extend: {
-			textColor: {
-				skin: {
-					"hdg-pri": "#28283D",
-					"content-pri": "#87879D",
-					"accent-pri": "#4D96A9",
-					"accent-sec": "#855FB1",
-					"accent-pri-hover": "#8FE3F9",
-					"accent-sec-hover": "#D9B8FF",
-				},
+			colors: {
+				primary: "#21092F",
+				"pri-med": "#8F8694",
+				"pri-light": "#DFDEE0",
+				error: "#FF5050",
 			},
-			backgroundColor: {
-				skin: {
-					"canvas-pri": "#FAFAFA",
-					"fill-pri": "#4D96A9",
-					"fill-sec": "#855FB1",
-				},
+			backgroundImage: {
+				"gradient-pri":
+					"linear-gradient(90deg, rgba(99,72,254,1) 0%, rgba(97,5,149,1) 100%)",
+				"gradient-sec":
+					"linear-gradient(180deg, rgba(99,72,254,1) 0%, rgba(97,5,149,1) 100%)",
 			},
 			fontFamily: {
-				fontFamily: ["Red Hat Display", "sans-serif"],
+				fontPri: ["Space Grotesk", "sans-serif"],
+				fontSec: ["Inter", "sans-serif"],
 			},
 			fontSize: {
-				hdgL: ["64px", "64px"],
-				hdgM: ["40px", "44px"],
-				overline: [
-					"16px",
+				bodyS: ".75rem",
+				bodyM: [
+					".75rem",
 					{
-						lineHeight: "26px",
-						letterSpacing: "4px",
+						letterSpacing: "2px",
+					},
+				],
+				bodyL: [
+					".875rem",
+					{
+						letterSpacing: "2px",
+					},
+				],
+				hdgL: "1.125rem",
+				hdgXl: [
+					"1.625rem",
+					{
+						letterSpacing: "3.42px",
 					},
 				],
 				bodyPri: ["18px", "26px"],
@@ -38,4 +45,4 @@ module.exports = {
 		},
 	},
 	plugins: [],
-};
+}
