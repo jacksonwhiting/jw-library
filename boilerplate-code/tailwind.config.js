@@ -4,10 +4,16 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: "#21092F",
-				"pri-med": "#8F8694",
-				"pri-light": "#DFDEE0",
-				error: "#FF5050",
+				skin: {
+					"canvas-pri": "some color",
+					"canvas-inverted": "some color",
+					"brand-pri": "some color",
+					"brand-sec": "some color",
+					"brand-tert": "some color",
+					"text-pri": "some color",
+					"text-sec": "some color",
+					"text-inverted": "some color",
+				},
 			},
 			backgroundImage: {
 				"gradient-pri":
